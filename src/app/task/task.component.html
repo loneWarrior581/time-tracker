@@ -1,0 +1,30 @@
+<div class="task-item">
+  <div class="task-info">
+    <div class="task-name">{{ task.name }}</div>
+    <div class="task-controls">
+      <div class="task-timer">
+        <div class="vl"></div>
+        <span>{{ getElapsedTime() }}</span>
+      </div>
+      <div class="task-actions">
+        <button class="task-action-button" style="background-color:#5056ED " (click)="start()" *ngIf="!task.startTime">Start</button>
+        <button class="task-action-button" style="background-color:#ED5050" (click)="stop()" *ngIf="task.startTime">Stop</button>
+        <button class="delete-action-button" (click)="delete()">X</button>
+      </div>
+    </div>
+  </div>
+  <div class="task-history">
+    <span>History:</span>
+    <p *ngIf="isTaskHistoryEmpty;else history_list">No History Found, Click on the start button to track the timer</p>
+    <ng-template #history_list>
+      <ul *ngIf="task.history.length > 0">
+        <li *ngFor="let entry of task.history.reverse()">
+          <span> Started the timer at {{entry.startTime | date: 'shortDate'}} {{ entry.startTime | date:'mediumTime' }} </span>
+          <span *ngIf="entry.endTime"> & Stopped at {{ entry.endTime | date:'mediumTime' }} </span>
+          <span *ngIf="!entry?.endTime">(Active)</span>
+        </li>
+      </ul>
+    </ng-template>
+  </div>
+</div>
+  

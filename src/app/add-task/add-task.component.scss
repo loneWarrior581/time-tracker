@@ -1,0 +1,16 @@
+.add-task {
+    position: fixed;
+    bottom: 30px;
+    right: 10px;
+    button {
+        height: 60px;
+        width: 60px ;
+        border-radius: 50%;
+        background-color: #5056ED;
+        text-align: center;
+        border: none;
+        color: white;
+        font-size: 36px;
+        font-weight: bold;
+    }
+}

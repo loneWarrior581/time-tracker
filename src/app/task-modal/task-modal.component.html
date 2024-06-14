@@ -1,0 +1,12 @@
+<div class="modal-overlay">
+  <div class="modal-content">
+    <div class="modal-header">
+      <p class="modal-title">Enter the Task Name</p>
+      <button type="button" class="close" (click)="onCancel()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <input type="text" class="form-control" [(ngModel)]="taskName">
+    </div>
+    <button type="button" class="save-button" (click)="onSave()">Save</button>
+  </div>
+</div>

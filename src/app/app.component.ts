@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'time-tracker';
+  headerImage = 'https://open-frontend-bucket.s3.amazonaws.com/interviews/001/logo.png';
 }
